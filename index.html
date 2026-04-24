@@ -3,114 +3,413 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Jessy Fonsat</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <title>Portfolio — FONSAT JESSY · BTS SIO</title>
+  <!-- Google Analytics (remplacer G-XXXXXXX par ton ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-XXXXXXX');
   </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<nav>
-  <div class="logo">JESSY.EXE</div>
-  <div>
-    <a href="#about">À propos</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projets</a>
-    <a href="#synthese">Synthèse</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <!-- ░░ CURSOR CUSTOM ░░ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
 
-<header class="hero">
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
+  <!-- ░░ PARTICULES BG ░░ -->
+  <canvas id="particles" class="particles-canvas"></canvas>
 
-  <div class="hero-content">
-    <div class="badge">BTS SIO · Portfolio futuriste</div>
-    <h1>Jessy<br>Fonsat</h1>
-    <p class="subtitle">
-      Étudiante en informatique spécialisée en support IT, réseaux et cybersécurité.
-    </p>
-    <div class="buttons">
-      <a class="btn" href="#synthese">Tableau de synthèse</a>
-      <a class="btn secondary" href="#projects">Projets</a>
+  <!-- ░░ SCANLINES ░░ -->
+  <div class="scanlines"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="glitch" data-text="&lt;PORTFOLIO/&gt;">&lt;PORTFOLIO/&gt;</span>
     </div>
-  </div>
-</header>
+    <ul class="nav-links">
+      <li><a href="#accueil" class="nav-link">ACCUEIL</a></li>
+      <li><a href="#apropos" class="nav-link">À PROPOS</a></li>
+      <li><a href="#competences" class="nav-link">COMPÉTENCES</a></li>
+      <li><a href="#projets" class="nav-link">PROJETS</a></li>
+      <li><a href="#synthese" class="nav-link synthese-btn">🧠 SYNTHÈSE</a></li>
+      <li><a href="#contact" class="nav-link">CONTACT</a></li>
+    </ul>
+    <div class="nav-burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
 
-<main>
+  <!-- ░░░░░░░░░░░░░░░░ SECTION ACCUEIL ░░░░░░░░░░░░░░░░ -->
+  <section id="accueil" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">BTS SIO · 1ère année · Alternance @ HENNER</div>
+      <h1 class="hero-title">
+        <span class="line1 glitch" data-text="FONSAT JESSY">FONSAT JESSY</span>
+        <span class="line2">Support IT · <span class="accent">Réseaux</span></span>
+        <span class="line3">&amp; <span class="accent2">Cybersécurité</span></span>
+      </h1>
+      <p class="hero-sub">
+        🛡️ Cybersécurité · Réseaux · Support informatique<br/>
+        Alternante Support N2 chez <strong>HENNER</strong> — BTS SIO 1ère année
+      </p>
+      <div class="hero-cta">
+        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+        <a href="#synthese" class="btn btn-outline">🧠 Tableau de synthèse</a>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-dot"></div>
+        <span>SCROLL</span>
+      </div>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-circle deco-c1"></div>
+      <div class="deco-circle deco-c2"></div>
+      <div class="deco-ring"></div>
+      <div class="deco-cross cross1"></div>
+      <div class="deco-cross cross2"></div>
+      <div class="floating-tags">
+        <span class="tag-float t1">GLPI</span>
+        <span class="tag-float t2">Cybersécurité</span>
+        <span class="tag-float t3">Virtualisation</span>
+        <span class="tag-float t4">Linux</span>
+        <span class="tag-float t5">Réseaux</span>
+      </div>
+    </div>
+  </section>
 
-<section id="about">
-  <h2>À propos</h2>
-  <p>
-    Étudiante en BTS SIO, je développe mes compétences en support IT, réseaux,
-    cybersécurité et gestion de services informatiques.
-  </p>
-</section>
+  <!-- ░░░░░░░░░░░░░░░░ SECTION À PROPOS ░░░░░░░░░░░░░░░░ -->
+  <section id="apropos" class="section apropos">
+    <div class="section-tag">// 01 — À PROPOS</div>
+    <div class="apropos-grid">
+      <div class="apropos-photo">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <span>PHOTO<br/>PRO</span>
+            <div class="photo-scan"></div>
+          </div>
+          <div class="photo-border-anim"></div>
+        </div>
+        <div class="apropos-badges">
+          <div class="badge-item">
+            <span class="badge-icon">🎓</span>
+            <span>BTS SIO SISR</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">🛡️</span>
+            <span>Cybersécurité &amp; Réseaux</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">💼</span>
+            <span>Alternante Support N2 — HENNER</span>
+          </div>
+        </div>
+      </div>
+      <div class="apropos-text">
+        <h2 class="section-title">Qui <span class="accent">suis-je</span> ?</h2>
+        <p class="apropos-desc">
+          Étudiante en <strong>BTS SIO option SISR</strong>, je m'intéresse particulièrement au
+          <strong>support informatique</strong>, aux <strong>réseaux</strong> et à la <strong>cybersécurité</strong>.
+          Mon objectif : évoluer dans un environnement technique stimulant où chaque défi est une opportunité d'apprendre.
+        </p>
+        <p class="apropos-desc">
+          J'ai développé des compétences concrètes en <strong>gestion de parc informatique avec GLPI</strong>,
+          gestion de tickets, <strong>virtualisation</strong> et déploiement de services.
+          En alternance au poste de <strong>Support Informatique N2 chez HENNER</strong>,
+          je mets en pratique ces compétences au quotidien dans un environnement professionnel exigeant.
+        </p>
+        <div class="linkedin-card">
+          <div class="linkedin-icon">in</div>
+          <div class="linkedin-info">
+            <strong>Retrouve-moi sur LinkedIn</strong>
+            <span>BTS SIO · Diplôme détaillé · Photo pro</span>
+          </div>
+          <a href="https://linkedin.com" target="_blank" class="btn btn-sm">Voir profil →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="skills">
-  <h2>Compétences</h2>
-  <div class="skills">
-    <span class="skill">Windows</span>
-    <span class="skill">Linux</span>
-    <span class="skill">GLPI</span>
-    <span class="skill">Réseaux</span>
-    <span class="skill">Cybersécurité</span>
-    <span class="skill">Azure</span>
-    <span class="skill">Trello</span>
-  </div>
-</section>
+  <!-- ░░░░░░░░░░░░░░░░ SECTION COMPÉTENCES ░░░░░░░░░░░░░░░░ -->
+  <section id="competences" class="section competences">
+    <div class="section-tag">// 02 — COMPÉTENCES</div>
+    <h2 class="section-title centered">Stack <span class="accent">Technique</span></h2>
+    <div class="skills-grid">
 
-<section id="projects">
-  <h2>Projets</h2>
-  <div class="card">
-    <h3>GLPI</h3>
-    <p>Gestion de parc + ticketing</p>
-  </div>
-</section>
+      <div class="skill-card" data-delay="0">
+        <div class="skill-icon">🖥️</div>
+        <h3>Systèmes</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item"><span>Windows Server</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><span>Linux (Debian)</span><div class="bar"><div class="bar-fill" style="--w:70%"></div></div></div>
+          <div class="skill-bar-item"><span>Active Directory</span><div class="bar"><div class="bar-fill" style="--w:65%"></div></div></div>
+        </div>
+      </div>
 
-<section id="synthese">
-  <h2>Tableau de synthèse</h2>
-  <table>
-    <tr>
-      <th>Compétence</th>
-      <th>Réalisation</th>
-    </tr>
-    <tr>
-      <td>C1</td>
-      <td>Gestion parc GLPI</td>
-    </tr>
-    <tr>
-      <td>C7</td>
-      <td>Ticketing GLPI</td>
-    </tr>
-    <tr>
-      <td>C11</td>
-      <td>Google Analytics</td>
-    </tr>
-  </table>
-</section>
+      <div class="skill-card" data-delay="100">
+        <div class="skill-icon">🌐</div>
+        <h3>Réseaux</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item"><span>TCP/IP</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
+          <div class="skill-bar-item"><span>VLAN / Routage</span><div class="bar"><div class="bar-fill" style="--w:65%"></div></div></div>
+          <div class="skill-bar-item"><span>Firewall</span><div class="bar"><div class="bar-fill" style="--w:60%"></div></div></div>
+        </div>
+      </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email : jessy.fonsat@eferi.net</p>
-</section>
+      <div class="skill-card" data-delay="200">
+        <div class="skill-icon">☁️</div>
+        <h3>Cloud & Outils</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item"><span>Azure</span><div class="bar"><div class="bar-fill" style="--w:70%"></div></div></div>
+          <div class="skill-bar-item"><span>GLPI</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
+          <div class="skill-bar-item"><span>GitHub Pages</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
+        </div>
+      </div>
 
-</main>
+      <div class="skill-card" data-delay="300">
+        <div class="skill-icon">📋</div>
+        <h3>Gestion de projet</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item"><span>Trello (Agile)</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+          <div class="skill-bar-item"><span>Méthode Scrum</span><div class="bar"><div class="bar-fill" style="--w:65%"></div></div></div>
+          <div class="skill-bar-item"><span>Documentation</span><div class="bar"><div class="bar-fill" style="--w:78%"></div></div></div>
+        </div>
+      </div>
 
-<footer>
-  <p>© 2026 Jessy</p>
-</footer>
+    </div>
+  </section>
 
+  <!-- ░░░░░░░░░░░░░░░░ SECTION PROJETS ░░░░░░░░░░░░░░░░ -->
+  <section id="projets" class="section projets">
+    <div class="section-tag">// 03 — PROJETS</div>
+    <h2 class="section-title centered">Réalisations <span class="accent2">Professionnelles</span></h2>
+    <div class="projets-grid">
+
+      <div class="projet-card">
+        <div class="projet-header">
+          <span class="projet-num">C1</span>
+          <span class="projet-tag">Inventaire</span>
+        </div>
+        <h3>Recensement du parc informatique</h3>
+        <p>Recenser et identifier les ressources numériques d'un parc informatique avec <strong>GLPI</strong>. Inventaire complet du matériel, logiciels et utilisateurs.</p>
+        <div class="projet-tech">
+          <span>GLPI</span><span>Inventaire</span><span>ITIL</span>
+        </div>
+        <div class="projet-footer">
+          <span class="competence-ref">Compétence C1</span>
+          <a href="#synthese" class="link-arrow">Voir synthèse →</a>
+        </div>
+      </div>
+
+      <div class="projet-card featured">
+        <div class="projet-header">
+          <span class="projet-num">C7</span>
+          <span class="projet-tag">Helpdesk</span>
+        </div>
+        <h3>Système de gestion de tickets GLPI</h3>
+        <p>Configuration complète du système de ticketing sur <strong>GLPI</strong> : catégories, SLA, groupes, notification automatique, et tableaux de bord.</p>
+        <div class="projet-tech">
+          <span>GLPI</span><span>Ticketing</span><span>ITSM</span>
+        </div>
+        <div class="projet-footer">
+          <span class="competence-ref">Compétence C7</span>
+          <a href="#synthese" class="link-arrow">Voir synthèse →</a>
+        </div>
+      </div>
+
+      <div class="projet-card">
+        <div class="projet-header">
+          <span class="projet-num">C11</span>
+          <span class="projet-tag">Web Analytics</span>
+        </div>
+        <h3>Google Analytics sur landing page</h3>
+        <p>Référencer les services en ligne et mesurer leur visibilité : ajout d'une balise <strong>Google Analytics</strong> sur une landing page, suivi des KPIs.</p>
+        <div class="projet-tech">
+          <span>Google Analytics</span><span>HTML</span><span>SEO</span>
+        </div>
+        <div class="projet-footer">
+          <span class="competence-ref">Compétence C11</span>
+          <a href="#synthese" class="link-arrow">Voir synthèse →</a>
+        </div>
+      </div>
+
+      <div class="projet-card">
+        <div class="projet-header">
+          <span class="projet-num">C..</span>
+          <span class="projet-tag">Agile</span>
+        </div>
+        <h3>Planification agile avec Trello</h3>
+        <p>Planifier les activités en méthode <strong>Agile</strong> via Trello : sprints, backlogs, kanban board, retrospectives et suivi de l'avancement.</p>
+        <div class="projet-tech">
+          <span>Trello</span><span>Scrum</span><span>Kanban</span>
+        </div>
+        <div class="projet-footer">
+          <span class="competence-ref">Planification</span>
+          <a href="#synthese" class="link-arrow">Voir synthèse →</a>
+        </div>
+      </div>
+
+      <div class="projet-card featured2">
+        <div class="projet-header">
+          <span class="projet-num">C17</span>
+          <span class="projet-tag">Déploiement</span>
+        </div>
+        <h3>Déploiement GLPI sur Azure / GitHub Pages</h3>
+        <p>Déployer un service complet : GLPI sur une machine virtuelle <strong>Azure</strong> ou via <strong>GitHub Pages</strong>. Configuration, sécurisation et mise en production.</p>
+        <div class="projet-tech">
+          <span>Azure VM</span><span>GitHub Pages</span><span>GLPI</span>
+        </div>
+        <div class="projet-footer">
+          <span class="competence-ref">Compétence C17</span>
+          <a href="https://github.com" target="_blank" class="link-arrow">GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░ SECTION TABLEAU DE SYNTHÈSE ░░░░░░░░░░░░░░░░ -->
+  <section id="synthese" class="section synthese">
+    <div class="section-tag">// 04 — TABLEAU DE SYNTHÈSE</div>
+    <h2 class="section-title centered">🧠 Tableau de <span class="accent">Synthèse</span></h2>
+    <p class="synthese-intro">Activités professionnelles réalisées et compétences associées du BTS SIO option SISR</p>
+
+    <div class="table-wrapper">
+      <table class="synthese-table">
+        <thead>
+          <tr>
+            <th>Compétence</th>
+            <th>Intitulé</th>
+            <th>Réalisation professionnelle</th>
+            <th>Outils</th>
+            <th>Période</th>
+            <th>Preuve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-glow">
+            <td><span class="comp-badge c1">C1</span></td>
+            <td>Recenser et identifier les ressources numériques</td>
+            <td>Inventaire du parc informatique avec GLPI (matériels, logiciels, utilisateurs)</td>
+            <td><span class="tool-tag">GLPI</span> <span class="tool-tag">Réseau</span></td>
+            <td>2024–2025</td>
+            <td><a href="#" class="proof-link">📎 Doc</a></td>
+          </tr>
+          <tr>
+            <td><span class="comp-badge c7">C7</span></td>
+            <td>Collecter, suivre et orienter des demandes</td>
+            <td>Configuration du système de gestion de tickets sur GLPI (catégories, SLA, notifications)</td>
+            <td><span class="tool-tag">GLPI</span> <span class="tool-tag">ITSM</span></td>
+            <td>2024–2025</td>
+            <td><a href="#" class="proof-link">📎 Doc</a></td>
+          </tr>
+          <tr class="row-glow">
+            <td><span class="comp-badge c11">C11</span></td>
+            <td>Référencer les services en ligne et mesurer leur visibilité</td>
+            <td>Ajout d'une balise Google Analytics sur une landing page, analyse des KPIs de visibilité</td>
+            <td><span class="tool-tag">G.Analytics</span> <span class="tool-tag">HTML</span></td>
+            <td>2025</td>
+            <td><a href="#" class="proof-link">📎 Doc</a></td>
+          </tr>
+          <tr>
+            <td><span class="comp-badge cxx">C..</span></td>
+            <td>Planifier les activités</td>
+            <td>Gestion de projet en méthode Agile/Scrum avec Trello : sprints, backlog, kanban</td>
+            <td><span class="tool-tag">Trello</span> <span class="tool-tag">Scrum</span></td>
+            <td>2024–2026</td>
+            <td><a href="#" class="proof-link">📎 Doc</a></td>
+          </tr>
+          <tr class="row-glow">
+            <td><span class="comp-badge c17">C17</span></td>
+            <td>Déployer un service</td>
+            <td>Déploiement de GLPI sur Azure VM et/ou GitHub Pages : installation, configuration, mise en prod</td>
+            <td><span class="tool-tag">Azure</span> <span class="tool-tag">GitHub</span> <span class="tool-tag">GLPI</span></td>
+            <td>2025</td>
+            <td><a href="https://github.com" target="_blank" class="proof-link">🔗 GitHub</a></td>
+          </tr>
+          <tr>
+            <td><span class="comp-badge linkedin">LK</span></td>
+            <td>Présence professionnelle en ligne</td>
+            <td>Création compte LinkedIn : photo pro, bannière, diplôme BTS SIO détaillé, description impactante</td>
+            <td><span class="tool-tag">LinkedIn</span></td>
+            <td>2024</td>
+            <td><a href="https://linkedin.com" target="_blank" class="proof-link">🔗 LinkedIn</a></td>
+          </tr>
+          <tr class="row-glow">
+            <td><span class="comp-badge portfolio">PF</span></td>
+            <td>Déployer un portfolio</td>
+            <td>Portfolio déployé sur GitHub Pages avec tableau de synthèse intégré, Google Analytics</td>
+            <td><span class="tool-tag">GitHub Pages</span> <span class="tool-tag">HTML/CSS</span></td>
+            <td>2025–2026</td>
+            <td><a href="#" class="proof-link">🌐 Live</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="synthese-legend">
+      <div class="legend-item"><span class="comp-badge c1">C1</span> Ressources numériques</div>
+      <div class="legend-item"><span class="comp-badge c7">C7</span> Gestion des demandes</div>
+      <div class="legend-item"><span class="comp-badge c11">C11</span> Visibilité web</div>
+      <div class="legend-item"><span class="comp-badge c17">C17</span> Déploiement</div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░ SECTION CONTACT ░░░░░░░░░░░░░░░░ -->
+  <section id="contact" class="section contact">
+    <div class="section-tag">// 05 — CONTACT</div>
+    <h2 class="section-title centered">Me <span class="accent">Contacter</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="contact-desc">Disponible pour une alternance, un stage ou un échange pro. N'hésite pas à me contacter !</p>
+        <div class="contact-links">
+          <a href="mailto:jessy.fonsat@henner.com" class="contact-item">
+            <span class="ci-icon">✉️</span>
+            <span>jessy.fonsat@henner.com</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item">
+            <span class="ci-icon">in</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com" target="_blank" class="contact-item">
+            <span class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.82 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-group">
+          <input type="text" placeholder="Ton prénom" class="form-input" />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ton email" class="form-input" />
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Ton message..." class="form-input form-textarea"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Envoyer ✉️</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="glitch footer-glitch" data-text="© 2025 — FONSAT JESSY">© 2025 — FONSAT JESSY</span>
+      <span>BTS SIO · 1ère année · Tous droits réservés</span>
+      <span class="footer-ga">📊 Suivi Google Analytics actif</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
