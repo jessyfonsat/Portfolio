@@ -4,66 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Jessy Fonsat</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Jessy Fonsat</h1>
-    <p>Étudiante en informatique | Future technicienne support / cybersécurité</p>
-  </header>
+<nav>
+  <div class="logo">JESSY.EXE</div>
+  <div>
+    <a href="#about">À propos</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projets</a>
+    <a href="#synthese">Synthèse</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <section>
-    <h2>À propos</h2>
-    <p>
-      Je suis étudiante en informatique, intéressée par le support IT, les réseaux,
-      la cybersécurité et l’administration système. Je maîtrise Windows, Linux,
-      les bases des machines virtuelles et les commandes essentielles.
+<header class="hero">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <div class="hero-content">
+    <div class="badge">BTS SIO · Portfolio futuriste</div>
+    <h1>Jessy<br>Fonsat</h1>
+    <p class="subtitle">
+      Étudiante en informatique spécialisée en support IT, réseaux et cybersécurité.
     </p>
-  </section>
-
-  <section>
-    <h2>Compétences</h2>
-    <ul>
-      <li>Windows, Linux, iOS</li>
-      <li>Support informatique</li>
-      <li>Réseaux et cybersécurité</li>
-      <li>Machines virtuelles</li>
-      <li>Commandes de base Linux</li>
-      <li>HTML / CSS</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projets</h2>
-
-    <div class="card">
-      <h3>Portfolio GitHub Pages</h3>
-      <p>Création d’un site web personnel pour présenter mon profil, mes compétences et mes projets.</p>
+    <div class="buttons">
+      <a class="btn" href="#synthese">Tableau de synthèse</a>
+      <a class="btn secondary" href="#projects">Projets</a>
     </div>
+  </div>
+</header>
 
-    <div class="card">
-      <h3>Poster scientifique - IMRB</h3>
-      <p>Réalisation d’un poster durant un stage de deux mois à l’IMRB.</p>
-    </div>
-  </section>
+<main>
 
-  <section>
-    <h2>Formation</h2>
-    <p>BTS SIO - Services Informatiques aux Organisations</p>
-    <p>Licence Sciences pour la santé, parcours bioinformatique</p>
-  </section>
+<section id="about">
+  <h2>À propos</h2>
+  <p>
+    Étudiante en BTS SIO, je développe mes compétences en support IT, réseaux,
+    cybersécurité et gestion de services informatiques.
+  </p>
+</section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email : jessy.fonsat@efrei.net</p>
-    <p>GitHub : github.com/JessyFonsat</p>
-    <p>LinkedIn : linkedin.com/in/ton-profil</p>
-  </section>
+<section id="skills">
+  <h2>Compétences</h2>
+  <div class="skills">
+    <span class="skill">Windows</span>
+    <span class="skill">Linux</span>
+    <span class="skill">GLPI</span>
+    <span class="skill">Réseaux</span>
+    <span class="skill">Cybersécurité</span>
+    <span class="skill">Azure</span>
+    <span class="skill">Trello</span>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Jessy Fonsat</p>
-  </footer>
+<section id="projects">
+  <h2>Projets</h2>
+  <div class="card">
+    <h3>GLPI</h3>
+    <p>Gestion de parc + ticketing</p>
+  </div>
+</section>
+
+<section id="synthese">
+  <h2>Tableau de synthèse</h2>
+  <table>
+    <tr>
+      <th>Compétence</th>
+      <th>Réalisation</th>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>Gestion parc GLPI</td>
+    </tr>
+    <tr>
+      <td>C7</td>
+      <td>Ticketing GLPI</td>
+    </tr>
+    <tr>
+      <td>C11</td>
+      <td>Google Analytics</td>
+    </tr>
+  </table>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email : ton.email@example.com</p>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Jessy</p>
+</footer>
 
 </body>
 </html>
