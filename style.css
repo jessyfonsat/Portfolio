@@ -1154,3 +1154,31 @@ body:has(a:hover) .cursor { width: 22px; height: 22px; background: var(--violet)
   .tl-card { padding: 1.2rem; }
   .tl-title { font-size: .9rem; }
 }
+/* ── GITHUB CARD (même style que LinkedIn) ── */
+.github-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: rgba(36,41,46,.15);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  margin-top: .8rem;
+  transition: border-color .3s, background .3s;
+}
+.github-card:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.25);
+}
+.github-icon {
+  width: 40px; height: 40px;
+  background: #24292e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,.15);
+}
+ 
