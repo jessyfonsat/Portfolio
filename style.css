@@ -1181,4 +1181,91 @@ body:has(a:hover) .cursor { width: 22px; height: 22px; background: var(--violet)
   flex-shrink: 0;
   border: 1px solid rgba(255,255,255,.15);
 }
+
+/* ── PROJETS — 3 cards layout + nouveaux éléments ── */
+.projets-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1000px) {
+  .projets-grid-3 { grid-template-columns: 1fr; }
+}
+ 
+/* Compétences acquises */
+.projet-apports {
+  background: rgba(255,45,120,.04);
+  border: 1px solid rgba(255,45,120,.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: .2rem 0;
+}
+.apport-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: 2px;
+  color: var(--pink);
+  margin-bottom: .7rem;
+}
+.apport-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.apport-list li {
+  font-size: .82rem;
+  color: rgba(248,248,255,.7);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+.apport-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--pink);
+  font-size: .7rem;
+}
+ 
+/* Lien bientôt dispo */
+.lien-bientot {
+  color: rgba(248,248,255,.3) !important;
+  font-style: italic;
+  cursor: default;
+  pointer-events: none;
+}
+ 
+/* Placeholder cards */
+.projet-placeholder {
+  border-style: dashed !important;
+  border-color: rgba(255,255,255,.1) !important;
+  background: rgba(255,255,255,.02) !important;
+  opacity: .6;
+}
+.projet-placeholder:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: rgba(255,255,255,.15) !important;
+}
+.placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: .6rem;
+  padding: 2.5rem 0;
+}
+.placeholder-icon { font-size: 2rem; opacity: .4; }
+.placeholder-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .85rem;
+  color: rgba(248,248,255,.3);
+  letter-spacing: 2px;
+}
+.placeholder-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .7rem;
+  color: rgba(248,248,255,.2);
+  letter-spacing: 1px;
+}
  
