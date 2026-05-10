@@ -1438,3 +1438,122 @@ body:has(a:hover) .cursor { width: 22px; height: 22px; background: var(--violet)
   .pdf-viewer-header { flex-direction: column; align-items: flex-start; }
   .pdf-header-right { width: 100%; }
 }
+
+/* ── HACKATHON FLASHCARD CARD ── */
+.projet-hackathon {
+  border-color: rgba(189,147,249,.3) !important;
+}
+.projet-hackathon:hover {
+  border-color: rgba(189,147,249,.6) !important;
+  box-shadow: 0 15px 50px rgba(189,147,249,.15) !important;
+}
+.projet-hackathon .projet-num { color: var(--violet) !important; text-shadow: var(--glow-violet) !important; }
+.projet-hackathon .projet-tag { color: var(--violet) !important; border-color: rgba(189,147,249,.4) !important; }
+
+/* Preview hackathon */
+.hackathon-preview {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(189,147,249,.25);
+  margin-bottom: .5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  transition: transform .3s;
+  background: #16162a;
+}
+.projet-hackathon:hover .hackathon-preview { transform: scale(1.02); }
+
+.hack-topbar {
+  background: #0e0e1c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+}
+.hack-dots { display: flex; gap: 4px; }
+.hack-dots span {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+}
+.hack-dots span:first-child { background: #ff5f57; }
+.hack-dots span:nth-child(2) { background: #febc2e; }
+.hack-dots span:last-child { background: #28c840; }
+.hack-url {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7px;
+  color: rgba(255,255,255,.35);
+  flex: 1;
+  text-align: center;
+}
+
+.hack-body {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 75px;
+  gap: 8px;
+}
+.hack-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.hack-logo {
+  font-size: 22px;
+  animation: hackPulse 2s ease-in-out infinite;
+}
+@keyframes hackPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.hack-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--violet);
+  text-align: center;
+  line-height: 1.3;
+}
+.hack-cards {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.hack-card {
+  width: 38px; height: 50px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7px;
+  font-weight: 700;
+  animation: cardFloat 3s ease-in-out infinite;
+}
+.hc1 { background: rgba(255,45,120,.2); color: var(--pink); border: 1px solid rgba(255,45,120,.4); animation-delay: 0s; }
+.hc2 { background: rgba(189,147,249,.2); color: var(--violet); border: 1px solid rgba(189,147,249,.4); animation-delay: .3s; }
+.hc3 { background: rgba(255,121,198,.2); color: var(--pink2); border: 1px solid rgba(255,121,198,.4); animation-delay: .6s; }
+@keyframes cardFloat {
+  0%,100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+.hack-badge-ai {
+  background: rgba(189,147,249,.1);
+  border-top: 1px solid rgba(189,147,249,.2);
+  padding: 5px 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7px;
+  color: var(--violet);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Liens doubles dans le footer */
+.hack-links {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+}
